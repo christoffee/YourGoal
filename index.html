@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>christoffee</title>
+    <link rel="stylesheet" href="vendor/css/bootstrap.css">
+    <link rel="stylesheet" href="app/css/styles.css">
+    <link rel="shortcut icon" href="app/images/christoffeeLogo.png">
+  </head>
+  <body ng-app="myApp">
+    <div id="main" ng-controller="BlogController">
+      <div id="logo">
+        <img src='app/images/christoffeeLogo.png' />
+      </div>
+      <div class='item'> 
+        
+      </div>
+      <div class='item' id="tags">
+        <p>game<b>designer</b> / game<b>developer</b> / web<b>developer</b> / story<b>maker</b> / data<b>analysis</b> / cake<b>eater</b></p>
+      </div>
+      <div class='item'>
+        <input placeholder="Search" ng-model="searchText.title" ng-click="minimiseAll()">
+      </div>
+      <div class="{{item.type}}" ng-repeat="item in items | orderBy:'order':true | filter:searchText" ng-click="togglecontent({{item.id}})">
+        <h3>{{item.title}}</h3>
+        <div ng-hide="item.unselected" data-ng-animate="'fade'" ng-bind-html-unsafe="item.content"></div>
+      </div>
+
+      <div class='item'> 
+        
+      </div>
+      <div class='item' id='angularjs'>
+        <img src='app/images/angularjs-logo.png' />
+        <p>Built in angularjs.</p>
+      </div> 
+
+      <div class='item'> 
+        
+      </div>
+    </div>
+    <div id="footer">
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.js"></script>
+    <script src="app/js/app.js"></script>
+  </body>
+</html>
